@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+import subprocess
+TARGET_HOST = '8.8.8.8'
+
+traceroute_output = subprocess.run(['traceroute', TARGET_HOST], capture_output=True)
+decoded_output = traceroute_output.stdout.decode('ascii')
+print(decoded_output)
