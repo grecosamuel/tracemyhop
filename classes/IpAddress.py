@@ -11,17 +11,41 @@ class IpAddress():
         self.ip_splitted = list(map(int, str(self.ip).split('.')))
     
     def find_ip_class(self):
-        if(self.ip_splitted[0] >= 0 and self.ip_splitted[0] <= 127):
+        if self.isClassA():
             return "A"
-        elif(self.ip_splitted[0] >=128 and self.ip_splitted[0] <= 191):
+        elif self.isClassB():
             return "B"
-        elif(self.ip_splitted[0] >= 192 and self.ip_splitted[0] <= 223):
+        elif self.isClassC():
             return "C"
-        elif(self.ip_splitted[0] >= 224 and self.ip_splitted[0] <= 239):
+        elif self.isClassD():
             return "D"
-        else:
+        elif self.isClassE():
             return "E"
+        
+    def isClassA(self):
+        if (self.ip_splitted[0] >= 0 and self.ip_splitted[0] <= 127):
+            return True
+        return False
+    
+    def isClassB(self):
+        if (self.ip_splitted[0] >=128 and self.ip_splitted[0] <= 191):
+            return True
+        return False
 
+    def isClassC(self):
+        if (self.ip_splitted[0] >= 192 and self.ip_splitted[0] <= 223):
+            return True
+        return False
+        
+    def isClassD(self):
+        if (self.ip_splitted[0] >= 224 and self.ip_splitted[0] <= 239):
+            return True
+        return False
+        
+    def isClassE(self):
+        if (self.ip_splitted[0] >= 240 and self.ip_splitted[0] <= 255):
+            return True
+        return False
 
 if __name__ == "__main__":
     str_ip = "127.0.0.1"
