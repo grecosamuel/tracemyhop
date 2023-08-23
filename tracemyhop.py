@@ -4,7 +4,7 @@ TARGET_HOST = '8.8.8.8'
 IP_REGEX = r"\((?:\d{1,3}\.{0,1}){0,4}\)"
 
 class IpAddress():
-    def __init__(self, ipaddress):
+    def __init__(self, ipaddress: str):
         self.ipaddress = ipaddress
 
 traceroute_output = subprocess.run(['traceroute', TARGET_HOST], capture_output=True)
