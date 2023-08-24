@@ -3,9 +3,6 @@ import subprocess,re
 TARGET_HOST = '8.8.8.8'
 IP_REGEX = r"\((?:\d{1,3}\.{0,1}){0,4}\)"
 
-class IpAddress():
-    def __init__(self, ipaddress: str):
-        self.ipaddress = ipaddress
 
 traceroute_output = subprocess.run(['traceroute', TARGET_HOST], capture_output=True)
 decoded_output = traceroute_output.stdout.decode('ascii')
