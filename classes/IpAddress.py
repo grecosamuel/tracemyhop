@@ -10,7 +10,7 @@ class IpAddress():
             raise ValueError(f"Ip provided is invalid, f{e}")
         self.ip_splitted = list(map(int, str(self.ip).split('.')))
     
-    def find_ip_class(self):
+    def get_ip_class(self):
         if self.isClassA():
             return "A"
         elif self.isClassB():
@@ -46,6 +46,9 @@ class IpAddress():
         if (self.ip_splitted[0] >= 240 and self.ip_splitted[0] <= 255):
             return True
         return False
+    
+    def __repr__(self) -> str:
+        return self.ip.__str__
 
 if __name__ == "__main__":
     str_ip = "127.0.0.1"
