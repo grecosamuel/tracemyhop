@@ -33,5 +33,15 @@ chmod +x tracemyhop.py
 
 
 ## Execution
+1. Run traceroute script from the CLI:
+    ```sh
+    python3 tracemyhop.py
+    ```
+2. Type the IP or the domain of the target host, 
+    <br>e.g.<br>
+    ```sh
+    Host target (ip address or domain): google.com
+    ```
+3. Wait until the trace is complete.
 
 **Free Software**
